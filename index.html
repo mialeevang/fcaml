@@ -74,15 +74,6 @@ a { text-decoration: none; color: #000; }
 	margin: 0 5px;
 	padding-bottom: 2px;
 }
-#share-it {
-	background-color: #222222;
-	margin-top: 10px;
-	text-align: center;
-}
-#share-it b {
-	display: block;
-	padding: 10px;
-}
 .site-note,
 .mapp-title,
 .mapp-filter,
@@ -158,7 +149,7 @@ a { text-decoration: none; color: #000; }
 	margin-left: 20px;
 	list-style: square;
 }
-.site-note { margin: 0 0 5px 0; }
+.site-note { margin: 0 0 5px 0; overflow: hidden; }
 .site-note li {
 	padding: 2px 0;
 }
@@ -254,10 +245,9 @@ a { text-decoration: none; color: #000; }
 	<li>Make sure everything is readable in the picture of the apartment map that you want to send to me.</li>
 
 	<li class="site-note-section">Share!</li>
-	<li>If you find this apartment map list helpful in anyway, please share it with those who do gig delivery work in Fresno, CA and Clovis, CA.
-		<div id="share-it"></div>
-	</li>
-
+	<li>If you find this apartment map list helpful in anyway, please share it with those who do gig delivery work in Fresno, CA and Clovis, CA.</li>
+	<li id="share-it"></li>
+	
 	<li class="site-note-section">Take Care!</li>
 	<li>I do this mostly whenever I'm free, so updates on the apartment map list may take awhile.</li>
 	<li>Feel free to also send feedbacks, suggestions, comments, etc to my email.</li>
@@ -31129,7 +31119,7 @@ $("<span style='font-size:14pt;'>"+aptmapped+" apartments mapped</span> <span>-<
 
 /* share link */
 var currentUrl = window.location.href;
-$("<b id='url-link'>"+currentUrl+"</b>").appendTo('#share-it');
+$("<span>copy and share link: </span><br/><b>"+currentUrl+"</b>").appendTo('#share-it');
 		
 /* misc */
 $("html, body").animate({ scrollTop: "0px" }, 100);
