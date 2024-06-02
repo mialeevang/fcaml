@@ -39,6 +39,9 @@
 </div>
 
 <ul class="site-note">
+	<li>open source:</li>
+	<li><b>https://github.com/mialeevang/fcaml/</b></li>
+	
 	<li class="site-note-section"><b>Important!</b></li>
 	
 	<li>Clicking on any unit # will open google map.</li>
@@ -54,7 +57,8 @@
 
 	<li class="site-note-section">Share!</li>
 	<li>If you find this apartment map list helpful in anyway, please share it with those who do gig delivery work in Fresno, CA and Clovis, CA.</li>
-	<li>copy and share link: <b>https://mialeevang.github.io/fcaml/</b></li>
+	<li>copy and share link:</li>
+	<li><b>https://mialeevang.github.io/fcaml/</b></li>
 	
 	<li class="site-note-section">Take Care!</li>
 	<li>I do this mostly whenever I'm free, so updates on the apartment map list may take awhile.</li>
