@@ -206,18 +206,6 @@ $(".mapp-title div, .coord").addClass('display-none');
 var aptmapped = $('.mapp-content').length;
 $("<span style='font-size:14pt;'>"+aptmapped+" apartments mapped</span> <span>-</span>").prependTo("#num-apt-mapped");
 
-/* light switch */
-$("#light-ons").click(function() {
-	$('<style id="light-css">body, html, #mapp-fixed, .mapp-title div span { background-color: #f5f5f5; } #close-fixed { background-color: #000000; opacity: .4; } .site-note b, .mapp-address b, .mapp-note li b, .mapp-addnote b, .mapp-note li u, .mapp-addnote u { color: #7F0000; } .mapp-address, .mapp-addnote { color: #000000; } .site-note, .mapp-address span, .mapp-title, .mapp-filter, .mapp-note, .mapp-table th, .mapp-table td { color: #000000; background-color: #dddddd; }  .mapp-table td a { color: #ffffff; background-color: #000000; } .mapp-table td a:hover { background-color: #666666; }  #header, #num-apt-mapped, #mapped .mapp-title:hover, .mapp-address span:hover, .mapp-table tr:hover td { background-color: #cccccc; } #header { border-bottom: solid 1px #000000; } </style>').insertAfter('head style');
-	$('#light-on').addClass("display-none");
-	$('#light-off').removeClass("display-none");
-});
-$("#light-offs").click(function() {
-	$('#light-css').remove();
-	$('#light-off').addClass("display-none");
-	$('#light-on').removeClass("display-none");
-});
-
 /* misc */
 $("html, body").animate({ scrollTop: "0px" }, 100);
 
