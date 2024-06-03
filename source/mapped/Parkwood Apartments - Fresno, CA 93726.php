@@ -7,16 +7,6 @@
 	</span>
 </span>
 
-<?php echo 
-'<ul class="mapp-note">', 
-
-$entrance, '<u></u>', '.</li>',
-
-'',
-
-'</ul>'; 
-?>
-
 <ul class="mapp-list">
 
 <li class="mapp-table">
