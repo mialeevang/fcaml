@@ -45,14 +45,9 @@ document.getElementById("light-off").addEventListener("click", function() {
 /* jquery functions starts */
 jQuery(document).ready(function($) {
 
+/* header misc */
 var headerheight = $("#header").outerHeight();
 $("#mapped").css({ 'margin-top' : headerheight + 5 });
-
-/* header */
-$("#mapped").click(function() {
-	$(".mapp-content").removeAttr("style");
-	$("#t-search input").val('');
-});
 
 /* #header - show when scroll down - hide when scroll up */
 var lastScrollTop = 0;
@@ -107,7 +102,7 @@ $(".mapp-filter input").on("keyup", function() {
 });
 
 /* copy address into a div in title for filter search */
-$("<div></div>").appendTo('#mapped .mapp-title');
+$("<div class='display-none'></div>").appendTo('#mapped .mapp-title');
 $("#mapped .mapp-address").each(function() {
 	$(this).clone().appendTo($(this).parent().parent().parent().find("div"));
 	$('#mapped .mapp-title div span span').remove();
@@ -152,9 +147,6 @@ $("#mapped .mapp-content").click(function() {
 
 	$(".mapp-filter").insertAfter("#mapp-fixed .mapp-title");
 
-	$('#mapp-fixed .mapp-title div').removeAttr('style');
-	$("#mapp-fixed .mapp-title div").addClass("display-none");
-
 	$("#close-fixed, #mapp-fixed, .mapp-filter").removeClass("display-none");
 });
 
@@ -163,15 +155,21 @@ $("#close-fixed").click(function() {
 	var mappfixed = $('#mapp-fixed');
     mappfixed.scrollTop(0);
 	
-	$('.mapp-title, .mapp-title div').removeAttr('style');
-	$("#close-fixed, #mapp-fixed, .mapp-filter, .mapp-title div").addClass("display-none");
-	
-	$(".mapp-filter input").val('');
+	$('.mapp-title').removeAttr('style');
+	$("#close-fixed, #mapp-fixed, .mapp-filter").addClass("display-none");
+
+	$("#t-search input, .mapp-filter input").val('');
 	$(".mapp-filter").prependTo("#mapped");
 	
 	$(".site-note").removeClass("display-none");
 	
 	$("#mapp-fixed .mapp-content").remove();
+});
+
+/* hide address number */
+$("#mapped .mapp-content, #close-fixed").click(function() {
+	$('.mapp-title div').removeAttr('style');
+	$(".mapp-title div").addClass("display-none");
 });
 
 /* toggle show-hide table */
@@ -199,9 +197,6 @@ $(document).on("click", ".copy-coord", function() {
 		copycoordbtn.html('<a>copy</a>');
 	}, 1500);
 });
-
-/* add "display-none" class on load */
-$(".mapp-title div").addClass('display-none');
 
 /* count and display apt mapped */
 var aptmapped = $('.mapp-content').length;
