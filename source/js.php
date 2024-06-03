@@ -138,7 +138,8 @@ $("#mapped .mapp-content").click(function() {
 
 	/* add toggle show-hide coords */
 	$("<b>&#10753;</b>").appendTo($(this).find('.unmapped .mapp-address'));
-
+	$(this).find(".coord").addClass("display-none");
+	
 	/* add copy to clipboard button for coordinates */
 	$(".unmapped tbody .coord").addClass("coords");
 	$("<th class='hide-coord coord display-none' style='width: 60px;'>&#10753;</th>").appendTo($(this).find(".unmapped thead tr"));
@@ -200,7 +201,7 @@ $(document).on("click", ".copy-coord", function() {
 });
 
 /* add "display-none" class on load */
-$(".mapp-title div, .coord").addClass('display-none');
+$(".mapp-title div").addClass('display-none');
 
 /* count and display apt mapped */
 var aptmapped = $('.mapp-content').length;
