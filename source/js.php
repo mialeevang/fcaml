@@ -90,15 +90,12 @@ $("#t-search input").on("keyup", function() {
 
 /* filter by unit # or building # */
 $(".mapp-filter input").on("keyup", function() {
-	$("#mapp-fixed td b").remove();
-	$("<b class='display-none'>ft</b>").prependTo("#mapp-fixed td.bldg, #mapp-fixed td.unit a");
-
 	var value = $(this).val().toLowerCase();
 		$(this).parent().parent().find(".mapp-table, tbody tr, td.unit a").filter(function() {
 		$(this).toggle($(this).text().toLowerCase().indexOf("ft" + value) > -1)
 	});
 	
-	$(".coord").addClass('display-none');
+	$("#mapp-fixed .coord").addClass('display-none');
 });
 
 /* copy address into a div in title for filter search */
@@ -148,6 +145,8 @@ $("#mapped .mapp-content").click(function() {
 	$(".mapp-filter").insertAfter("#mapp-fixed .mapp-title");
 
 	$("#close-fixed, #mapp-fixed, .mapp-filter").removeClass("display-none");
+	
+	$("<b class='display-none'>ft</b>").prependTo("#mapp-fixed td.bldg, #mapp-fixed td.unit a");
 });
 
 /* hide map */
